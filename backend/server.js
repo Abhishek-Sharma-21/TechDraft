@@ -13,9 +13,6 @@ const genAI = new GoogleGenerativeAI(process.env.GEMNI_API_KEY);
 
 app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 app.use(bodyParser.json());
-app.use("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 app.post("/techDraft", async (req, res) => {
   const { featureIdea, developmentScope } = req.body;
