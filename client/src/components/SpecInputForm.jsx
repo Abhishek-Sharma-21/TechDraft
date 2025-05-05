@@ -9,6 +9,7 @@ import {
 } from "./ui/select";
 import { Button } from "./ui/button";
 import { Zap, Loader2 } from "lucide-react";
+import toast from "react-hot-toast";
 
 export default function SpecInputForm({ onTechDraft }) {
   const [featureIdea, setFeatureIdea] = useState("");
@@ -39,6 +40,7 @@ export default function SpecInputForm({ onTechDraft }) {
       }
       const data = await response.json();
       if (data.result) {
+        toast.success("Specification generated!");
         onTechDraft(data.result);
         // console.log(data.result); // You can do something with the result here
 
